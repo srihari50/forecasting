@@ -14,8 +14,6 @@ st.markdown('Sales Graph')
 
 uploaded_file = st.file_uploader(" ", type=['xlsx'])
 
-uploaded_file['Date'] =  pd.to_datetime(uploaded_file['Date'])
-
 uploaded_file.rename(columns = {'Date' : 'ds', 'Sales_Quantity_Milliontonnes' : 'y'}, inplace = True)
 uploaded_file
 
