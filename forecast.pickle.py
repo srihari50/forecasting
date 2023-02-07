@@ -11,7 +11,7 @@ def model_np():
 	m = pickle.load(open('forecast_model.pkl', 'rb'))
 
 	st.subheader("Using Prophet")
-	df = df_train
+	df = df_test
 	df.reset_index(inplace=True)
 	df_train = df[['Date','Sales_Quantity_Milliontonnes']]
 	df_train = df_train.rename(columns={"Date": "ds", "Close": "y"})
