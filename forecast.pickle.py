@@ -14,9 +14,9 @@ st.sidebar.title("About")
 st.sidebar.info("Forecasting Close Price of Ethereum using 'NeuralProphet' Machine Learning model.")
 
 def get_input():
-    sidebar.header("Input From user")
-    sidebar.subheader("Select range of Date for visualize data for particular date range.")
-    sidebar.write("(From 2023-1-31 to 2023-12-31)")
+    st.sidebar.header("Input From user")
+    st.sidebar.subheader("Select range of Date for visualize data for particular date range.")
+    st.sidebar.write("(From 2023-1-31 to 2023-12-31)")
     start_date = st.sidebar.text_input("Start Date", "2023-1-31")
     end_date = st.sidebar.text_input("End Date", "2023-12-31")
     write("")
