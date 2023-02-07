@@ -34,7 +34,7 @@ def get_data(start, end):
 	start_row = 0
 	end_row = 0
 
-	for i in range(0, len(uploaded_file)):
+	for i in range(0, len(uploaded_file['Date'])):
 		if start <=	pd.to_datetime(uploaded_file['Date'][i]):
 			start_row = i
 			break
