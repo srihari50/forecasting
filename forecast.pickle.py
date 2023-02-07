@@ -43,7 +43,7 @@ def get_data(start, end):
 			end_row = len(df) - 1 - j
 			break
 
-	df = df.set_index(pd.DatetimeIndex(df['Date'].values))
+	uploaded_file = uploaded_file.set_index(pd.DatetimeIndex(uploaded_file['Date'].values))
 	return df.iloc[start_row:end_row+1, :]
 
 start, end, period = get_input()
