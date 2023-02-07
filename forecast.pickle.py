@@ -28,7 +28,7 @@ START = "2023-1-31"
 TODAY = date.today().strftime("%Y-%M-%d")
 
 def get_data(start, end):
-	df = pd.read_excel(r'C:\Users\sriha\Desktop\cement project\All India_Features - train data.xlsx')
+	uploaded_file = st.file_uploader(" ", type=['xlsx'])
 	start = pd.to_datetime(start)
 	end = pd.to_datetime(end)
 	start_row = 0
