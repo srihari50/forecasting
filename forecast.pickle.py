@@ -19,7 +19,7 @@ def get_input():
     st.sidebar.write("(From 2023-1-31 to 2023-12-31)")
     start_date = st.sidebar.text_input("Start Date", "2023-1-31")
     end_date = st.sidebar.text_input("End Date", "2023-12-31")
-    write("")
+    st.write("")
     st.sidebar.subheader("Enter Period for Forecasting of Price")
     period = st.sidebar.text_input("Period (In Days)", "12")
     return start_date, end_date, period
