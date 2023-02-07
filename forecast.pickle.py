@@ -34,13 +34,13 @@ def get_data(start, end):
 	start_row = 0
 	end_row = 0
 
-	for i in range(0, len(df)):
-		if start <=	pd.to_datetime(df['Date'][i]):
+	for i in range(0, len(uploaded_file)):
+		if start <=	pd.to_datetime(uploaded_file['Date'][i]):
 			start_row = i
 			break
-	for j in range(0, len(df)):
-		if end >= pd.to_datetime(df['Date'][len(df)-1-j]):
-			end_row = len(df) - 1 - j
+	for j in range(0, len(uploaded_file)):
+		if end >= pd.to_datetime(uploaded_file['Date'][len(df)-1-j]):
+			end_row = len(uploaded_file) - 1 - j
 			break
 
 	uploaded_file = uploaded_file.set_index(pd.DatetimeIndex(uploaded_file['Date'].values))
