@@ -27,7 +27,7 @@ st.write(future)
 
 forecast = obj.predict(future)  #make prediction for the extended data
 forecast = forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']]
-
+st.write(forecast)
 
 
 
