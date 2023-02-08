@@ -12,9 +12,10 @@ st.title('Time Series Forecasting Using Streamlit')
 uploaded_file = st.file_uploader(" ", type=['xlsx'])
 if uploaded_file is not None:
     appdata = pd.read_excel(uploaded_file)  #read the data fro
+    appdata = appdata.rename(columns={'Sales_Quantity_Milliontonnes': 'y', 'Date':'ds'})
     appdata['ds'] = pd.to_datetime(appdata['ds']) 
-    st.write(uploaded_file) #display the data  
-    max_date = appdata['ds'].max()
+    
+st.write(uploaded_file) #display the data
 
 st.write("SELECT FORECAST PERIOD")
 
