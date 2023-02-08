@@ -31,7 +31,7 @@ if past_data is not None:
     model.add_regressor('Unit_Price')
     model.fit(appdata)
     future = model.make_future_dataframe(periods=12, freq = 'M')
-    
+st.write(future)    
 
 
 
