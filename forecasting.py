@@ -10,7 +10,8 @@ import base64
 st.title('Time Series Forecasting Using Streamlit')
 
 uploaded_files = st.file_uploader(" ", accept_multiple_files=True, type = ['xlxs'])
-for uploaded_file in uploaded_files:
+if uploaded_files is not None:
+    for uploaded_file in uploaded_files:
     data = pd.read_excel(uploaded_files)
     future_data = pd.read_excel(uploaded_files)
 st.write(data)
