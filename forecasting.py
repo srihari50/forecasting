@@ -17,7 +17,7 @@ if past_data is not None:
     
 st.write(past_data) #display the data
 
-if uploaded_file is not None:
+if past_data is not None:
     model = Prophet()
     model_new.add_regressor('GDP_Construction_Rs_Crs')
     model_new.add_regressor('GDP_Realestate_Rs_Crs')
