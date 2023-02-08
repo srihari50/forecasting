@@ -13,7 +13,8 @@ data = st.file_uploader(' ',type='Xlsx', accept_multiple_files = True)
 for data in data:
      if data is not None:
           appdata = pd.read_excel(data)
-          appdata['ds'] = pd.to_datetime(appdata['ds'],errors='coerce') 
+          newdata = pd.read_excel(data) 
+          newdata['ds'] = pd.to_datetime(newdata['ds'])
      st.write(data) 
      
 
