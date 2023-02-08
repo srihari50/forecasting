@@ -17,7 +17,7 @@ if files is not None:
           data['ds'] = pd.to_datetime(data['ds'])
           newdata = pd.read_excel(files)
 st.write(files) 
-st.write(files)
+st.write(newdata)
 
 
 
