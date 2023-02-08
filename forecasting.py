@@ -14,7 +14,7 @@ if files is not None:
      for file in files:
           data = pd.read_excel(files)
           data = data.rename(columns={'Sales_Quantity_Milliontonnes': 'y', 'Date':'ds'})
-          data['ds'] = pd.to_datetime(appdata['ds'])
+          data['ds'] = pd.to_datetime(data['ds'])
           newdata = pd.read_excel(files)
 st.write(files) 
 st.write(files)
