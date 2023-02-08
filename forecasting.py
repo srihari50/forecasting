@@ -23,7 +23,7 @@ if data is not None:
 
  if data is not None:
      future = obj.make_future_dataframe(periods=periods_input)
-
+st.write(future)
 
 
 
