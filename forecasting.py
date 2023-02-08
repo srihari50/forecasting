@@ -12,7 +12,7 @@ st.title('Time Series Forecasting Using Streamlit')
 data = st.file_uploader(' ',type='excel')
 
 appdata = pd.read_excel(data)  #read the data fro
-appdata['ds'] = pd.to_datetime(appdata['ds'],errors='coerce') 
+appdata['ds'] = pd.to_datetime(appdata['ds']) 
 st.write(data) #display the data  
 max_date = appdata['ds'].max()
 
