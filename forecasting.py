@@ -21,8 +21,8 @@ if data is not None:
      obj = Prophet()
      obj.fit(appdata)
 
- if data is not None:
-     future = obj.make_future_dataframe(periods=periods_input)
+if data is not None:
+    future = obj.make_future_dataframe(periods=periods_input)
 st.write(future)
 
 
