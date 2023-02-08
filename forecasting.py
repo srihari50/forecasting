@@ -14,8 +14,8 @@ if uploaded_files is not None:
     for uploaded_file in uploaded_files:
     data = pd.read_excel(uploaded_files)
     future_data = pd.read_excel(uploaded_files)
-st.write(data)
-st.write(future_data)
+    st.write(data)
+    st.write(future_data)
 
 if data is not None:
     model = Prophet()
