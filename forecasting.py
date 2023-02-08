@@ -9,6 +9,14 @@ from prophet.plot import plot_cross_validation_metric
 
 st.title('Cement Sales Forecasting')
 
+files = st.file_uploader(' ',type='Xlsx')
+if files is not None:
+     data = pd.read_excel(data)
+     data = data.rename(columns={'Sales_Quantity_Milliontonnes': 'y', 'Date':'ds'})
+     data['ds'] = pd.to_datetime(appdata['ds'])
+st.write(data) 
+
+
 data = st.file_uploader(' ',type='Xlsx', accept_multiple_files = True)
 for data in data:
      if data is not None:
