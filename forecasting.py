@@ -31,4 +31,5 @@ st.write(forecast.tail(12))
 figure1 = obj.plot(forecast)
 st.write(figure1)
 
-
+figure2 = obj.plotly_components(forecast) 
+st.write(figure2)
