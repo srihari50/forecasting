@@ -28,7 +28,7 @@ forecast = obj.predict(future)  #make prediction for the extended data
 forecast = forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']]
 st.write(forecast.tail(12))
 
-
-
+figure1 = obj.plot(forecast)
+st.write(figure1)
 
 
