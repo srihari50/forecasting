@@ -14,6 +14,8 @@ if data is not None:
   appdata = pd.read_excel(data)
   appdata = appdata.rename(columns={'Sales_Quantity_Milliontonnes': 'y', 'Date':'ds'})
   appdata['ds'] = pd.to_datetime(appdata['ds'],errors='coerce') 
+
+  
 st.write(data)
  
 
