@@ -9,7 +9,7 @@ from prophet.plot import plot_cross_validation_metric
 
 st.title('Cement Sales Forecasting')
 
-data = st.file_uploader(' ',type='Xlsx', accept_multiple_files = True)
+st.file_uploader(' ',type='Xlsx', accept_multiple_files = True)
 
 if data is not None:
      appdata = pd.read_excel(data)
