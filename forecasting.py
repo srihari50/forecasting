@@ -17,14 +17,11 @@ if files is not None:
 st.write(files) 
 
 
-data = st.file_uploader(' ',type='Xlsx', accept_multiple_files = True)
-for data in data:
-     if data is not None:
-          appdata = pd.read_excel(data)
-          newdata = pd.read_excel(data)
-          appdata = appdata.rename(columns={'Sales_Quantity_Milliontonnes': 'y', 'Date':'ds'})
-          appdata['ds'] = pd.to_datetime(appdata['ds'])
-st.write(appdata) 
+files2 = st.file_uploader(' ',type='Xlsx', accept_multiple_files = True)
+if files2 is not None:
+     newdata = pd.read_excel(files2)
+     newdata = newdata.rename(columns={'y', 'Date':'ds'})
+     newdata['ds'] = pd.to_datetime(newdata['ds'])
 st.write(newdata)
 
 
