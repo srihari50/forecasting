@@ -19,7 +19,7 @@ st.write(data)
 
 if data is not None:
      obj = Prophet()
-     obj.fit(data)
+     obj.fit(appdata)
 
 
 
