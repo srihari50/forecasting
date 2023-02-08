@@ -12,6 +12,8 @@ st.title('Time Series Forecasting Using Streamlit')
 uploaded_files = st.file_uploader(" ", accept_multiple_files=True, type = ['xlxs'])
 if uploaded_files is not None:
     for uploaded_file in uploaded_files:
+         data = pd.read_excel(uploaded_file)
+         future_data = pd.read_excel(uploaded_file)
     st.write(uploaded_file)
     st.write(uploaded_file)
 
