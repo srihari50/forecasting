@@ -23,7 +23,6 @@ if data is not None:
 
 if data is not None:
     future = obj.make_future_dataframe(periods=12, freq = 'M')
-st.write(future)
 
 forecast = obj.predict(future)  #make prediction for the extended data
 forecast = forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']]
