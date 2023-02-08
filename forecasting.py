@@ -22,7 +22,7 @@ if data is not None:
      obj.fit(appdata)
 
 if data is not None:
-    future = obj.make_future_dataframe(periods=periods_input)
+    future = obj.make_future_dataframe(periods=12, freq = 'M')
 st.write(future)
 
 
