@@ -16,8 +16,8 @@ for data in data:
           newdata = pd.read_excel(data)
           appdata = appdata.rename(columns={'Sales_Quantity_Milliontonnes': 'y', 'Date':'ds'})
           appdata['ds'] = pd.to_datetime(appdata['ds'])
-     st.write(appdata) 
-     st.write(newdata)
+st.write(appdata) 
+st.write(newdata)
 
 
 
