@@ -14,7 +14,7 @@ if files is not None:
      data = pd.read_excel(files)
      data = data.rename(columns={'Sales_Quantity_Milliontonnes': 'y', 'Date':'ds'})
      data['ds'] = pd.to_datetime(appdata['ds'])
-st.write(data) 
+st.write(files) 
 
 
 data = st.file_uploader(' ',type='Xlsx', accept_multiple_files = True)
