@@ -32,7 +32,7 @@ if data is not None:
     forecast = fcst[['ds', 'yhat', 'yhat_lower', 'yhat_upper']]
 
 figure2 = obj.plot_components(fcst) 
-     st.write(figure2) 
+     st.write(figure2)
 
 
 
