@@ -9,15 +9,13 @@ import base64
 
 st.title('Time Series Forecasting Using Streamlit')
 
-past_data = st.file_uploader(" ", type=['xlsx'])
-if past_data is not None:
-    appdata = pd.read_excel(past_data)  #read the data fro
-    appdata = appdata.rename(columns={'Sales_Quantity_Milliontonnes': 'y', 'Date':'ds'})
-    appdata['ds'] = pd.to_datetime(appdata['ds']) 
-    
-st.write(past_data) #display the data
+uploaded_files = st.file_uploader("Choose a CSV file", accept_multiple_files=True)
+for uploaded_file in uploaded_files:
+    bytes_data = uploaded_file.read()
+    st.write("filename:", uploaded_file.name)
+    st.write(bytes_data)
 
-if past_data is not None:
+if bytes_data is not None:
     model = Prophet()
     model.add_regressor('GDP_Construction_Rs_Crs')
     model.add_regressor('GDP_Realestate_Rs_Crs')
