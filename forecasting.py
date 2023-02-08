@@ -9,31 +9,29 @@ import base64
 
 st.title('Time Series Forecasting Using Streamlit')
 
-uploaded_file = st.file_uploader(" ", type=['xlsx'])
-if uploaded_file is not None:
-    appdata = pd.read_excel(uploaded_file)  #read the data fro
+past_data = st.file_uploader(" ", type=['xlsx'])
+if past_data is not None:
+    appdata = pd.read_excel(past_data)  #read the data fro
     appdata = appdata.rename(columns={'Sales_Quantity_Milliontonnes': 'y', 'Date':'ds'})
     appdata['ds'] = pd.to_datetime(appdata['ds']) 
     
-st.write(uploaded_file) #display the data
-
-st.write("SELECT FORECAST PERIOD")
-
-periods_input = st.number_input('12',min_value = 1, max_value = 12)
+st.write(past_data) #display the data
 
 if uploaded_file is not None:
-     obj = Prophet()
-     obj.fit(appdata)
-
-st.write("VISUALIZE FORECASTED DATA")  
-st.write("")
-if uploaded_file is not None:
-    future = obj.make_future_dataframe(periods=periods_input)
-    fcst = obj.predict(future)
-    forecast = fcst[['ds', 'yhat', 'yhat_lower', 'yhat_upper']]
-
-
-st.write(forecast) 
+    model = Prophet()
+    model_new.add_regressor('GDP_Construction_Rs_Crs')
+    model_new.add_regressor('GDP_Realestate_Rs_Crs')
+    model_new.add_regressor('Oveall_GDP_Growth%')
+    model_new.add_regressor('Water_Source')
+    model_new.add_regressor('Limestone')
+    model_new.add_regressor('Coal_Milliontonne')
+    model_new.add_regressor('Home_Interest_Rate')
+    model_new.add_regressor('Trasportation_Cost')
+    model_new.add_regressor('Order_Quantity_Milliontonnes')
+    model_new.add_regressor('Unit_Price')
+    model.fit(appdata)
+    future = model.make_future_dataframe(periods=12, freq = 'M')
+    
 
 
 
