@@ -31,8 +31,8 @@ if uploaded_file is not None:
     fcst = obj.predict(future)
     forecast = fcst[['ds', 'yhat', 'yhat_lower', 'yhat_upper']]
 
-figure2 = obj.plot_components(fcst) 
-st.write(figure2) 
+
+st.write(forecast) 
 
 
 
