@@ -20,8 +20,6 @@ st.write(files)
 files2 = st.file_uploader(' ',type='Xlsx', accept_multiple_files = True)
 if files2 is not None:
      newdata = pd.read_excel(files2)
-     newdata = newdata.rename(columns={'Date':'ds'})
-     newdata['ds'] = pd.to_datetime(newdata['ds'])
 st.write(newdata)
 
 
