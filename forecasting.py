@@ -29,5 +29,5 @@ st.write(forecast.tail(12))
 figure1 = obj.plot(forecast)
 st.write(figure1)
 
-figure2 = plot_plotly(model, forecast)
+figure2 = plot_plotly(obj, forecast)
 st.write(figure2)
