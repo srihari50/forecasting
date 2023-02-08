@@ -31,7 +31,8 @@ if past_data is not None:
     model.add_regressor('Unit_Price')
     model.fit(appdata)
     future = model.make_future_dataframe(periods=12, freq = 'M')
-
+st.write(future)
+    
 new_data = st.file_uploader(" ", type=['xlsx'], accept_multiple_files = True)
 if new_data is not None:
     data = pd.read_excel(new_data)  #read the data fro
