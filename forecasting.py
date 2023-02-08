@@ -2,10 +2,10 @@
 import streamlit as st 
 import pandas as pd
 import numpy as np
-from fbprophet import Prophet
-from fbprophet.diagnostics import performance_metrics
-from fbprophet.diagnostics import cross_validation
-from fbprophet.plot import plot_cross_validation_metric
+from prophet import Prophet
+from prophet.diagnostics import performance_metrics
+from prophet.diagnostics import cross_validation
+from prophet.plot import plot_cross_validation_metric
 
 st.title('Cement Sales Forecasting')
 
