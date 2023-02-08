@@ -10,10 +10,10 @@ from prophet.plot import plot_cross_validation_metric
 st.title('Cement Sales Forecasting')
 
 data = st.file_uploader(' ',type='Xlsx', accept_multiple_files = True)
-
-if data is not None:
-     appdata = pd.read_excel(data)
-     appdata['ds'] = pd.to_datetime(appdata['ds'],errors='coerce') 
+for data in data:
+     if data is not None:
+          appdata = pd.read_excel(data)
+          appdata['ds'] = pd.to_datetime(appdata['ds'],errors='coerce') 
      st.write(data) 
      
 
