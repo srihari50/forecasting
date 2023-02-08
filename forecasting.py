@@ -13,8 +13,9 @@ data = st.file_uploader(' ',type='Xlsx', accept_multiple_files = True)
 for data in data:
      if data is not None:
           appdata = pd.read_excel(data)
-          newdata = pd.read_excel(data) 
-          newdata['ds'] = pd.to_datetime(newdata['ds'])
+          newdata = pd.read_excel(data)
+          appdata = appdata.rename(columns={'Sales_Quantity_Milliontonnes': 'y', 'Date':'ds'})
+          appdata['ds'] = pd.to_datetime(appdata['ds'])
      st.write(data) 
      
 
