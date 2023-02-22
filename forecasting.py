@@ -13,8 +13,6 @@ if data is not None:
   appdata = appdata.rename(columns={'Sales_Quantity_Milliontonnes': 'y', 'Date':'ds'})
   appdata['ds'] = pd.to_datetime(appdata['ds']) 
 
-st.write(appdata)
-
 if data is not None:
      obj = Prophet()
      obj.fit(appdata)
